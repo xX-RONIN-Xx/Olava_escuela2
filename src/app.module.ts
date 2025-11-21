@@ -15,6 +15,11 @@ import { CiudadModule } from './ciudad/ciudad.module';
       database: process.env.MYSQL_DB,
       entities: [__dirname + '/**/*.entity.{js,ts}'],
       synchronize: false, // La DB ya existe en Clever Cloud
+      extra: {
+  connectionLimit: 2,
+  waitForConnections: true,
+  queueLimit: 0,
+},
     }),
     CiudadModule,
   ],
@@ -25,7 +30,7 @@ import { CiudadModule } from './ciudad/ciudad.module';
 
 
 
-  /***************************
+    /***************************
   imports: [    TypeOrmModule.forRoot( {
     "type": "mysql",
     "host": "ba4e4i9as5mtw7y63ooi-mysql.services.clever-cloud.com",

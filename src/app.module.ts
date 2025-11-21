@@ -16,7 +16,7 @@ import { CiudadModule } from './ciudad/ciudad.module';
       entities: [__dirname + '/**/*.entity.{js,ts}'],
       synchronize: false, // La DB ya existe en Clever Cloud
       extra: {
-  connectionLimit: 2,
+  connectionLimit: 1,
   waitForConnections: true,
   queueLimit: 0,
 },
